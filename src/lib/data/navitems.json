@@ -1,6 +1,7 @@
 [
     {
         "title": "Projects",
+        "href": "/projects",
         "contents": [
             {
                 "name": "Melon Merge 3D",
@@ -20,17 +21,8 @@
         ]
     },
     {
-        "title": "Item 2",
-        "contents": [
-            {
-                "name": "Item 2 1",
-                "href": "/"
-            },
-            {
-                "name": "Item 2 2",
-                "href": "/"
-            }
-        ]
+        "title": "About Me",
+        "href": "/about"
     },
     {
         "title": "Item 3",

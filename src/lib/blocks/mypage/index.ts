@@ -1,3 +1,3 @@
-import Root from './mypage.svelte'
+import Root from './mypage.svelte';
 
 export { Root as MyPage };
