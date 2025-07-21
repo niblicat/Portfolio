@@ -1,2 +1,2 @@
 // Need to wrap it in object
-export const cats = $state({count: 0});
+export const cats = $state({ count: 0 });
