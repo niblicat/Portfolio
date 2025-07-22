@@ -14,7 +14,7 @@
                     'bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 border',
                 secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
                 ghost: 'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
-                link: 'text-primary underline-offset-4 hover:underline'
+                link: 'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 underline-offset-4 hover:underline cursor-pointer'
             },
             size: {
                 default: 'h-9 px-4 py-2 has-[>svg]:px-3',
@@ -54,17 +54,17 @@
 </script>
 
 {#if href}
-    <a
-        bind:this={ref}
-        data-slot="button"
-        class={cn(buttonVariants({ variant, size }), className)}
-        href={disabled ? undefined : href}
-        aria-disabled={disabled}
-        role={disabled ? 'link' : undefined}
-        tabindex={disabled ? -1 : undefined}
-        {...restProps}
-    >
-        {@render children?.()}
+    <a {href}>
+        <button
+            bind:this={ref}
+            data-slot="button"
+            class={cn(buttonVariants({ variant, size }), className)}
+            {type}
+            {disabled}
+            {...restProps}
+        >
+            {@render children?.()}
+        </button>
     </a>
 {:else}
     <button

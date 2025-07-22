@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { ModeWatcher } from 'mode-watcher';
-    import '../app.css';
+    import { MyPage } from '$lib/blocks/mypage';
     import type { Snippet } from 'svelte';
 
     interface Props {
@@ -10,6 +9,6 @@
     let { children }: Props = $props();
 </script>
 
-<ModeWatcher />
-
-{@render children()}
+<MyPage>
+    {@render children()}
+</MyPage>

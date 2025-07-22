@@ -1,6 +1,6 @@
 <script lang="ts">
     import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
-    import * as Drawer from "$lib/components/ui/drawer/index.js";
+    import * as Drawer from '$lib/components/ui/drawer/index.js';
     import { NavItemKind } from '../../structures/nav';
     import { navItems } from '$lib/data/navitems';
     import { Content } from '$lib/components/ui/dropdown-menu';
@@ -9,14 +9,14 @@
 </script>
 
 <Drawer.Root bind:open>
-    <Drawer.Trigger class={buttonVariants({ variant: "outline" })}>Directory</Drawer.Trigger>
+    <Drawer.Trigger class={buttonVariants({ variant: 'outline' })}>Directory</Drawer.Trigger>
     <Drawer.Content>
         <nav class="mx-4 mt-4">
             {#each navItems as item}
-                <div class="font-light font-stretch-200% text-2xl py-4">
+                <div class="py-4 text-2xl font-light font-stretch-200%">
                     {item.title}
                 </div>
-                <div class="flex flex-wrap gap-2 justify-around">
+                <div class="flex flex-wrap justify-around gap-2">
                     {#if item.kind === NavItemKind.Content}
                         <!-- Display a header with buttons -->
                         {#each item.contents as content}
@@ -34,9 +34,7 @@
             {/each}
         </nav>
         <Drawer.Footer>
-            <Drawer.Close class={buttonVariants({ variant: "outline" })}>
-                Back
-            </Drawer.Close>
+            <Drawer.Close class={buttonVariants({ variant: 'outline' })}>Back</Drawer.Close>
         </Drawer.Footer>
     </Drawer.Content>
 </Drawer.Root>

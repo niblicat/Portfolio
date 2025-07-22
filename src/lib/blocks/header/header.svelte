@@ -4,21 +4,30 @@
     import Navigation from './navigation.svelte';
 
     let width = $state(0);
+
+    interface Props {
+        children?: any;
+    }
+
+    let { children }: Props = $props();
 </script>
 
 <svelte:window bind:innerWidth={width} />
 
-
-<header>
+<header data-slot="header">
     <div class="fixed top-8 right-0 left-0 z-50 px-2 sm:px-8">
         <div
-            class="z-50 mx-8 md:mx-auto flex max-w-5xl flex-wrap justify-between gap-4 rounded-lg bg-(--secondary) px-2 py-2 sm:px-8"
+            class="z-50 mx-8 flex max-h-16 max-w-5xl flex-wrap justify-between gap-4 rounded-lg bg-(--secondary) px-2 py-2 sm:px-8 md:mx-auto"
         >
-            <!-- TODO: Create a cool logo here -->
-            <p class="my-auto text-4xl font-thin"><a href="/">Nibli</a></p>
+            <a href="/">
+                <div class="flex items-center justify-baseline gap-4">
+                    <p class="text-4xl font-thin">Nibli</p>
+                    {@render children?.()}
+                </div>
+            </a>
 
-            <div class="flex justify-end gap-4">
-                {#if width < 700}
+            <div class="flex items-center justify-end gap-4">
+                {#if width < 768}
                     <Drawer />
                 {:else}
                     <Navigation />

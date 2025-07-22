@@ -5,22 +5,23 @@
 <script lang="ts">
     interface Props {
         children?: any;
+        secondary?: any;
         useHeader?: boolean;
     }
-    let { children, useHeader = true }: Props = $props();
+    let { children, secondary, useHeader = true }: Props = $props();
 </script>
 
-{#if useHeader}
-    <div data-slot="my-page" class="w-full overflow-x-hidden">
+<div data-slot="my-page" class="z-10 w-full overflow-x-hidden">
+    {#if useHeader}
         <div class="mx-auto mt-[var(--top-margin)] max-w-7xl p-4">
-            <Header />
+            <Header>
+                {@render secondary?.()}
+            </Header>
             {@render children?.()}
         </div>
-    </div>
-{:else}
-    <div data-slot="my-page" class="w-full overflow-x-hidden">
+    {:else}
         <div class="mx-auto max-w-7xl p-4">
             {@render children?.()}
         </div>
-    </div>
-{/if}
+    {/if}
+</div>
