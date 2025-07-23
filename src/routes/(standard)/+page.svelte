@@ -1,7 +1,14 @@
 <script lang="ts">
     import Article from '$lib/blocks/header/article.svelte';
-    import Button from '$lib/components/ui/button/button.svelte';
-    import articleRaw from '$lib/data/articletemp.md?raw';
+    import articleRaw from '$lib/data/articles/temp.md?raw';
 </script>
 
-<Article raw={articleRaw} />
+<svelte:head>
+    <title>Angelina Flores' Portfolio</title>
+    <meta
+        name="description"
+        content="Angelina Flores is an aspiring software developer who has worked on a variety of personal and professional projects."
+    />
+</svelte:head>
+
+<Article raw={articleRaw} tag="main" />

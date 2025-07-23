@@ -11,7 +11,7 @@
 <Drawer.Root bind:open>
     <Drawer.Trigger class={buttonVariants({ variant: 'outline' })}>Directory</Drawer.Trigger>
     <Drawer.Content>
-        <nav class="mx-4 mt-4">
+        <nav class="xs:mx-auto mx-4 mt-4">
             {#each navItems as item}
                 <div class="py-4 text-2xl font-light font-stretch-200%">
                     {item.title}
@@ -26,7 +26,7 @@
                         {/each}
                     {:else if item.kind === NavItemKind.Link}
                         <!-- Display header with singular button -->
-                        <Button size="sm" class="min-w-[calc(100%)]" href={item.href}>
+                        <Button size="sm" class="min-w-full" href={item.href}>
                             {item.title}
                         </Button>
                     {/if}

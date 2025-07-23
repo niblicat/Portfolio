@@ -1,7 +1,7 @@
 <script lang="ts">
     import { ModeWatcher } from 'mode-watcher';
-    import '../app.css';
     import type { Snippet } from 'svelte';
+    import '../app.css';
 
     interface Props {
         children: Snippet;

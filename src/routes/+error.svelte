@@ -3,6 +3,8 @@
     import { page } from '$app/state';
     import { browser } from '$app/environment';
     import Button from '$lib/components/ui/button/button.svelte';
+    import Article from '$lib/blocks/header/article.svelte';
+    import imageMolly from '$lib/images/molly.jpg';
 
     const numErrorKey = 'numErrors';
     const numErrors: number =
@@ -45,10 +47,12 @@
     }
 </script>
 
+<svelte:head>
+    <title>{page.state}</title>
+</svelte:head>
+
 <MyPage>
-    <main
-        class="prose prose-slate dark:prose-invert mx-auto max-w-xl rounded-lg border p-4 py-6 text-center shadow-lg"
-    >
+    <Article class="text-center" tag="main">
         <h1>{page.status}: {page.error?.message}</h1>
         {#await errorMessage then string}
             <p>{string}</p>
@@ -63,11 +67,11 @@
         {/if}
 
         <img
-            class="rounded-lg object-contain"
-            src="/images/molly.jpg"
+            class="mx-auto rounded-lg object-contain"
+            src={imageMolly}
             alt="A befuzzled muppet cat"
         />
 
-        <Button variant="link" class="mt-24" href="/">Home</Button>
-    </main>
+        <Button variant="link" href="/">Home</Button>
+    </Article>
 </MyPage>

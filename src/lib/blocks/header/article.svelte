@@ -1,26 +1,34 @@
 <script lang="ts">
     import { cn } from '$lib/utils';
     import Showdown from 'showdown';
+    import type { Snippet } from 'svelte';
 
     const { Converter } = Showdown;
     const converter = new Converter();
 
     interface Props {
-        raw: string;
+        raw?: string;
+        tag?: string;
         class?: string;
+        children?: Snippet;
     }
 
-    let { raw, class: className, ...restProps }: Props = $props();
+    let { raw, tag = 'div', class: className, children, ...restProps }: Props = $props();
 
-    let article = $state(converter.makeHtml(raw));
+    let article = $state(raw && converter.makeHtml(raw));
 </script>
 
-<main
+<svelte:element
+    this={tag}
     class={cn(
-        'prose prose-slate dark:prose-invert mx-8 max-w-4xl rounded-lg border px-2 py-6 shadow-lg sm:px-8 md:mx-auto',
+        'prose prose-slate dark:prose-invert bg-background inset-shadow-secondary mx-4 my-4 max-w-4xl rounded-lg border px-6 py-6 inset-shadow-sm sm:mx-8 sm:px-8 md:mx-auto',
         className
     )}
     {...restProps}
 >
-    {@html article}
-</main>
+    {#if article}
+        {@html article}
+    {:else}
+        {@render children?.()}
+    {/if}
+</svelte:element>

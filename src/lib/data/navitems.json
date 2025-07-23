@@ -1,5 +1,9 @@
 [
     {
+        "title": "About Me",
+        "href": "/about"
+    },
+    {
         "title": "Projects",
         "href": "/projects",
         "contents": [
@@ -17,52 +21,6 @@
                 "name": "Pomodoro Timer",
                 "description": "A stylish timer to keep yourself on task. Available with a variety of themes and silly sounds.",
                 "href": "https://timer.nibli.net"
-            }
-        ]
-    },
-    {
-        "title": "About Me",
-        "href": "/about"
-    },
-    {
-        "title": "Item 3",
-        "contents": [
-            {
-                "name": "Item 3 1",
-                "href": "/"
-            },
-            {
-                "name": "Item 3 2",
-                "href": "/"
-            },
-            {
-                "name": "Item 3 3",
-                "href": "/"
-            },
-            {
-                "name": "Item 3 4",
-                "href": "/"
-            }
-        ]
-    },
-    {
-        "title": "Item 4",
-        "contents": [
-            {
-                "name": "Item 4 1",
-                "href": "/"
-            },
-            {
-                "name": "Item 4 2",
-                "href": "/"
-            },
-            {
-                "name": "Item 4 3",
-                "href": "/"
-            },
-            {
-                "name": "Item 4 4",
-                "href": "/"
             }
         ]
     }

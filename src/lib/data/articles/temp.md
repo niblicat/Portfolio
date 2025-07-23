@@ -1,4 +1,4 @@
-# Welcome to my portfolio website.
+# Welcome to my portfolio website
 
 This website is currently being developed as of 21 July 2025.
 
