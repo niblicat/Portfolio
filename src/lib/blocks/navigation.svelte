@@ -3,6 +3,7 @@
     import { NavItemKind, type NavContent, type NavItem } from '../structures/nav';
     import { navItems } from '$lib/data/navitems';
     import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
+    import { buttonVariants } from '$lib/components/ui/button';
 </script>
 
 {#snippet ListLink(content: NavContent)}
@@ -27,7 +28,9 @@
 {#snippet ListItem(item: NavItem)}
     <NavigationMenu.Item>
         {#if item.kind === NavItemKind.Content}
-            <NavigationMenu.Trigger>{item.title}</NavigationMenu.Trigger>
+            <NavigationMenu.Trigger class={buttonVariants({ variant: 'outline' })}>
+                {item.title}
+            </NavigationMenu.Trigger>
             {@render ListContent(item.contents)}
         {:else if item.kind === NavItemKind.Link}
             <NavigationMenu.Link>

@@ -15,9 +15,7 @@
 <div data-slot="my-page" class="z-10 w-full overflow-x-hidden">
     {#if useHeader}
         <div class="mx-auto mt-16 max-w-7xl p-4 sm:mt-18">
-            <Header>
-                {@render secondary?.()}
-            </Header>
+            <Header children={secondary}></Header>
             {@render children?.()}
         </div>
     {:else}

@@ -7,7 +7,7 @@
     <title>Angelina Flores' Portfolio</title>
     <meta
         name="description"
-        content="Angelina Flores is an aspiring software developer who has worked on a variety of personal and professional projects."
+        content="Angelina Flores is a software developer who has worked on a variety of personal and professional projects."
     />
 </svelte:head>
 
