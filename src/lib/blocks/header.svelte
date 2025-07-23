@@ -21,7 +21,7 @@
         >
             <a href="/">
                 <div class="flex items-center justify-baseline gap-4">
-                    <p class="text-4xl font-thin">Angelina Flores</p>
+                    <p class="text-2xl sm:text-4xl font-thin">Angelina Flores</p>
                     {@render children?.()}
                 </div>
             </a>
