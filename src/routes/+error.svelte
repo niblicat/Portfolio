@@ -3,7 +3,7 @@
     import { page } from '$app/state';
     import { browser } from '$app/environment';
     import Button from '$lib/components/ui/button/button.svelte';
-    import Article from '$lib/blocks/header/article.svelte';
+    import Article from '$lib/blocks/article.svelte';
     import imageMolly from '$lib/images/molly.jpg';
 
     const numErrorKey = 'numErrors';

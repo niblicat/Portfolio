@@ -1,6 +1,6 @@
 <script lang="ts" module>
     import type { Snippet } from 'svelte';
-    import Header from '../header/header.svelte';
+    import Header from '../header.svelte';
 </script>
 
 <script lang="ts">

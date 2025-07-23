@@ -1,6 +1,6 @@
 <script lang="ts">
     import { MyPage } from '$lib/blocks/mypage';
-    import Banner from '$lib/blocks/header/banner.svelte';
+    import Banner from '$lib/blocks/banner.svelte';
     import type { Snippet } from 'svelte';
     import imageLogo from '$lib/images/merge-logo-2.png';
     import imageBanner from '$lib/images/melon-banner.png';

@@ -1,5 +1,5 @@
 <script>
-    import Article from '$lib/blocks/header/article.svelte';
+    import Article from '$lib/blocks/article.svelte';
     import Button from '$lib/components/ui/button/button.svelte';
     import raw from '$lib/data/articles/melon.md?raw';
     import imageGooglePlay from '$lib/images/google-play.png';

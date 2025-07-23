@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Article from '$lib/blocks/header/article.svelte';
+    import Article from '$lib/blocks/article.svelte';
     import articleRaw from '$lib/data/articles/temp.md?raw';
 </script>
 

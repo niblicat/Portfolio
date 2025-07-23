@@ -1,9 +1,8 @@
 <script lang="ts">
     import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
     import * as Drawer from '$lib/components/ui/drawer/index.js';
-    import { NavItemKind } from '../../structures/nav';
+    import { NavItemKind } from '../structures/nav';
     import { navItems } from '$lib/data/navitems';
-    import { Content } from '$lib/components/ui/dropdown-menu';
 
     let open = $state(false);
 </script>

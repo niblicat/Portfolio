@@ -1,6 +1,6 @@
 <script lang="ts">
     import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
-    import { NavItemKind, type NavContent, type NavItem } from '../../structures/nav';
+    import { NavItemKind, type NavContent, type NavItem } from '../structures/nav';
     import { navItems } from '$lib/data/navitems';
     import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
 </script>

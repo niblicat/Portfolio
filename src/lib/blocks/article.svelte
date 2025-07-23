@@ -1,10 +1,7 @@
 <script lang="ts">
     import { cn } from '$lib/utils';
-    import Showdown from 'showdown';
-    import type { Snippet } from 'svelte';
-
-    const { Converter } = Showdown;
-    const converter = new Converter();
+    
+    import { onMount, type Snippet } from 'svelte';
 
     interface Props {
         raw?: string;
@@ -13,9 +10,20 @@
         children?: Snippet;
     }
 
+    let article: string | undefined = $state("");
+
     let { raw, tag = 'div', class: className, children, ...restProps }: Props = $props();
 
-    let article = $state(raw && converter.makeHtml(raw));
+    onMount(async () => {
+        const showdown = await import('showdown');
+        const { Converter } = showdown.default;
+
+        const converter = new Converter();
+
+        if (raw) {
+            article = converter.makeHtml(raw);
+        }
+    });
 </script>
 
 <svelte:element
