@@ -48,7 +48,7 @@
 </script>
 
 <svelte:head>
-    <title>{page.state}</title>
+    <title>{page.status} Error</title>
 </svelte:head>
 
 <MyPage>

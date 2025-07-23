@@ -11,14 +11,14 @@
     <Drawer.Trigger class={buttonVariants({ variant: 'outline' })}>Directory</Drawer.Trigger>
     <Drawer.Content>
         <nav class="xs:mx-auto mx-4 mt-4">
-            {#each navItems as item}
+            {#each navItems as item (item.title)}
                 <div class="py-4 text-2xl font-light font-stretch-200%">
                     {item.title}
                 </div>
                 <div class="flex flex-wrap justify-around gap-2">
                     {#if item.kind === NavItemKind.Content}
                         <!-- Display a header with buttons -->
-                        {#each item.contents as content}
+                        {#each item.contents as content (content.name)}
                             <Button size="sm" class="min-w-[calc(50%-0.5rem)]" href={content.href}>
                                 {content.name}
                             </Button>

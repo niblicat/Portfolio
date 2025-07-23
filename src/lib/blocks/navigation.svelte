@@ -16,7 +16,7 @@
 {#snippet ListContent(contents: NavContent[])}
     <NavigationMenu.Content>
         <ul class="grid w-[300px] gap-4 p-2">
-            {#each contents as content}
+            {#each contents as content (content.name)}
                 <li>
                     {@render ListLink(content)}
                 </li>
@@ -44,7 +44,7 @@
 
 <NavigationMenu.Root viewport={false}>
     <NavigationMenu.List class="flex flex-wrap">
-        {#each navItems as item}
+        {#each navItems as item (item.title)}
             {@render ListItem(item)}
         {/each}
     </NavigationMenu.List>
