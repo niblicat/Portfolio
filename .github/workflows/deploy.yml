@@ -35,6 +35,5 @@ jobs:
                   server: ftp.nibli.net
                   server-dir: ./build/
                   local-dir: ./build/
-                  dangerous-clean-slate: true
                   username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}

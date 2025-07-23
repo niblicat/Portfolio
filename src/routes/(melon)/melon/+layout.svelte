@@ -3,7 +3,6 @@
     import Banner from '$lib/blocks/banner.svelte';
     import type { Snippet } from 'svelte';
     import imageLogo from '$lib/images/merge-logo-2.png';
-    import imageBanner from '$lib/images/melon-banner.png';
 
     interface Props {
         children: Snippet;
@@ -20,7 +19,8 @@
     </div>
 {/snippet}
 
-<Banner url={imageBanner} />
+<!-- Import from static since dynamic imports won't work with toImageUrl() -->
+<Banner image="/images/melon-banner.png" />
 
 <MyPage secondary={logo}>
     {@render children()}

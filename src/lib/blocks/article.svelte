@@ -1,6 +1,6 @@
 <script lang="ts">
     import { cn } from '$lib/utils';
-    
+
     import { onMount, type Snippet } from 'svelte';
 
     interface Props {
@@ -10,7 +10,7 @@
         children?: Snippet;
     }
 
-    let article: string | undefined = $state("");
+    let article: string | undefined = $state('');
 
     let { raw, tag = 'div', class: className, children, ...restProps }: Props = $props();
 
