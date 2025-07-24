@@ -3,11 +3,12 @@
     import type { Snippet } from 'svelte';
     import Drawer from './drawer.svelte';
     import Navigation from './navigation.svelte';
+    import type { ChildrenProps } from '$lib/utilities/props';
 
     let width = $state(0);
 
-    interface Props {
-        children?: Snippet;
+    interface Props extends ChildrenProps {
+        // logo: Snippet;
     }
 
     let { children }: Props = $props();
@@ -22,7 +23,8 @@
         >
             <!-- Title and Project Badge -->
             <a href="/">
-                <div class="flex items-center justify-baseline gap-4">
+                <!-- TODO: Make this its own prop -->
+                <div class="flex items-center justify-baseline gap-2">
                     {#if !children || width >= 640}
                         <p class="text-2xl font-thin sm:text-3xl md:text-4xl">Angelina Flores</p>
                     {/if}
@@ -30,8 +32,9 @@
                 </div>
             </a>
 
+            <!-- TODO: Automatically detect when flex rows > 1 -->
             <!-- Directory and Navigation -->
-            <div class="flex items-center justify-end gap-4">
+            <div class="flex items-center justify-end gap-2">
                 {#if width < 768}
                     <Drawer />
                 {:else}

@@ -3,6 +3,7 @@
     import Banner from '$lib/blocks/banner.svelte';
     import type { Snippet } from 'svelte';
     import imageLogo from '$lib/images/merge-logo-2.png';
+    import Header from '$lib/blocks/header.svelte';
 
     interface Props {
         children: Snippet;
@@ -19,9 +20,24 @@
     </div>
 {/snippet}
 
+{#snippet header()}
+    <Header>
+        {@render logo()}
+    </Header>
+{/snippet}
+
+{#snippet footer()}
+    <!-- Don't make footer colors extend beyond page due to overscroll -->
+    <footer class="mt-auto bg-red-500/50">
+        footer
+        <br />
+        footer
+    </footer>
+{/snippet}
+
 <!-- Import from static since dynamic imports won't work with toImageUrl() -->
 <Banner image="/images/melon-banner.png" />
 
-<MyPage secondary={logo}>
+<MyPage class="flex min-h-lvh flex-col pt-14 sm:pt-18" {header} {footer}>
     {@render children()}
 </MyPage>

@@ -11,4 +11,7 @@
     />
 </svelte:head>
 
-<Article raw={articleRaw} tag="main"></Article>
+<Article raw={articleRaw} tag="section"></Article>
+<div class="bg-red-500">Another element for testing</div>
+<div class="bg-green-500">Another element for testing</div>
+<div class="bg-blue-500">Another element for testing</div>

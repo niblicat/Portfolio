@@ -1,27 +1,45 @@
 <script lang="ts" module>
-    import type { Snippet } from 'svelte';
-    import Header from '../header.svelte';
+    import type { BodyContainerProps } from '$lib/utilities/props';
+    import { cn } from '$lib/utils';
 </script>
 
 <script lang="ts">
-    interface Props {
-        children?: Snippet;
-        secondary?: Snippet;
-        useHeader?: boolean;
+    interface Props extends BodyContainerProps {
+        innerClass?: string;
     }
 
-    let { children, secondary, useHeader = true }: Props = $props();
+    let {
+        header,
+        footer,
+        class: className,
+        innerClass,
+        children,
+        ref = $bindable(null),
+        ...restProps
+    }: Props = $props();
 </script>
 
-<div data-slot="my-page" class="z-10 w-full overflow-x-hidden">
-    {#if useHeader}
-        <div class="mx-auto mt-16 max-w-7xl p-4 sm:mt-18">
-            <Header children={secondary}></Header>
-            {@render children?.()}
-        </div>
-    {:else}
-        <div class="mx-auto max-w-7xl p-4">
-            {@render children?.()}
-        </div>
-    {/if}
+<!--
+@component
+My Page is a wrapper for the header, main, and footer of your website.
+Make sure to pass in snippets when desired for the header and footer, rather
+than leaving them as children of My Page.
+
+Anything passed as a child to My Page will be wrapped within a main element.
+
+The header and footer will be inserted outside of the width spacing wrapper,
+so they are free to fit the full width of the page.
+-->
+
+<div
+    data-slot="my-page"
+    class={cn('z-0 min-h-full w-full', className)}
+    bind:this={ref}
+    {...restProps}
+>
+    {@render header?.()}
+    <main class={cn('mx-auto max-w-7xl p-4', innerClass)}>
+        {@render children?.()}
+    </main>
+    {@render footer?.()}
 </div>

@@ -11,3 +11,10 @@ export interface StandardProps extends ChildrenProps {
     /** Reference to the component. */
     ref?: HTMLElement | null;
 }
+
+export interface BodyContainerProps extends StandardProps {
+    /** Header should be wrapped in a \<header\> element */
+    header?: Snippet;
+    /** Footer should be wrapped in a \<footer\> element */
+    footer?: Snippet;
+}
