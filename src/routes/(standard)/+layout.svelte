@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Header from '$lib/blocks/header.svelte';
+    import Header from '$lib/blocks/header/header.svelte';
     import { MyPage } from '$lib/blocks/mypage';
     import type { Snippet } from 'svelte';
 
