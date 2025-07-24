@@ -20,13 +20,13 @@
     {#if !children || width >= 640}
         Angelina Flores
     {/if}
-    <div class="recessed max-h-12 max-w-28 p-1 rounded-lg">
+    <div class="recessed max-h-12 max-w-28 rounded-lg p-1">
         <img class="object-contain" src={imageLogo} alt="Melon Merge 3D logo" />
     </div>
 {/snippet}
 
 {#snippet header()}
-    <Header.Root>
+    <Header.Root class="fixed top-0 right-0 left-0 mt-4 sm:mt-8 ">
         <Header.Logo class="text-2xl font-thin sm:text-3xl md:text-4xl">
             {@render logo()}
         </Header.Logo>

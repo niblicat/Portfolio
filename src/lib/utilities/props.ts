@@ -1,7 +1,7 @@
 import type { Snippet } from 'svelte';
 
 export interface ChildrenProps {
-    /** Children of the component's main element.  */
+    /** Children of the component's main element. */
     children?: Snippet;
 }
 
@@ -13,8 +13,8 @@ export interface StandardProps extends ChildrenProps {
 }
 
 export interface BodyContainerProps extends StandardProps {
-    /** Header should be wrapped in a \<header\> element */
+    /** Header should be wrapped in a \<header\> element. */
     header?: Snippet;
-    /** Footer should be wrapped in a \<footer\> element */
+    /** Footer should be wrapped in a \<footer\> element. */
     footer?: Snippet;
 }

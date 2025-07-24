@@ -3,12 +3,15 @@
     import * as Drawer from '$lib/components/ui/drawer/index.js';
     import { NavItemKind } from '../structures/nav';
     import { navItems } from '$lib/data/navitems';
+    import { Menu } from '@lucide/svelte';
 
     let open = $state(false);
 </script>
 
 <Drawer.Root bind:open>
-    <Drawer.Trigger class={buttonVariants({ variant: 'outline' })}>Directory</Drawer.Trigger>
+    <Drawer.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
+        <Menu />
+    </Drawer.Trigger>
     <Drawer.Content>
         <nav class="xs:mx-auto mx-4 mt-4">
             {#each navItems as item (item.title)}

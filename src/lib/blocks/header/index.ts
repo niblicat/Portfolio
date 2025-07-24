@@ -1,5 +1,5 @@
 import Root from './header.svelte';
-import Logo from './header-logo.svelte'
+import Logo from './header-logo.svelte';
 
 export {
     Root,

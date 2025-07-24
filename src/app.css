@@ -149,6 +149,6 @@
         @apply bg-background text-foreground;
     }
     .recessed {
-        @apply from-foreground/10 to-foreground/5 dark:from-foreground/5 dark:to-foreground/10 inset-shadow-ring bg-linear-to-b inset-shadow-xs
+        @apply from-foreground/10 to-foreground/5 dark:from-foreground/5 dark:to-foreground/10 inset-shadow-ring bg-linear-to-b inset-shadow-xs;
     }
 }
