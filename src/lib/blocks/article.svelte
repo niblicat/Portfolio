@@ -3,7 +3,6 @@
     import { cn } from '$lib/utils';
     import { AttributeError } from '$lib/utilities/errors';
     import { SkeletonParagraph } from '$lib/blocks/skeleton';
-    import { fade } from 'svelte/transition';
 
     interface Props extends StandardProps {
         /** Raw article contents as string. */
@@ -39,7 +38,7 @@
     };
 </script>
 
-<!-- 
+<!--
 @component
 Articles can be used to display standard HTML article content.
 Alternatively, if you pass a markdown-formatted string into the raw attribute,
@@ -58,7 +57,6 @@ the raw attribute.
     )}
     {...restProps}
     bind:this={ref}
-    transition:fade
 >
     {#if raw}
         {#await convertArticle()}
