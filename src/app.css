@@ -78,6 +78,29 @@
 
 @theme {
     --breakpoint-xs: 30rem;
+
+    /* make sure to use a 3 stop gradient when using this with bg-size 200% */
+    --animate-gradient: gradient 2s linear infinite;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 200% 50%; /* this works since the bg tiles */
+        }
+    }
+
+    --animate-wiggle: wiggle 1s ease-in-out infinite;
+    @keyframes wiggle {
+        0%,
+        100% {
+            transform: rotate(-3deg);
+        }
+        50% {
+            transform: rotate(3deg);
+        }
+    }
 }
 
 @theme inline {

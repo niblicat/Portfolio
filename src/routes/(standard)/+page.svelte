@@ -11,4 +11,4 @@
     />
 </svelte:head>
 
-<Article raw={articleRaw} tag="main" />
+<Article raw={articleRaw} tag="main"></Article>

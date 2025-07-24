@@ -1,10 +1,13 @@
-import type { WithElementRef } from 'bits-ui';
 import type { Snippet } from 'svelte';
-import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-export interface StandardProps extends WithElementRef<HTMLAnchorAttributes> {
-    /** The class to use on the component's main element. */
-    class?: string;
+export interface ChildrenProps {
     /** Children of the component's main element.  */
     children?: Snippet;
+}
+
+export interface StandardProps extends ChildrenProps {
+    /** Class to use on the component's main element. */
+    class?: string;
+    /** Reference to the component. */
+    ref?: HTMLElement | null;
 }

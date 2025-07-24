@@ -54,15 +54,16 @@
 <MyPage>
     <Article class="text-center" tag="main">
         <h1>{page.status}: {page.error?.message}</h1>
-        {#await errorMessage then string}
-            <p>{string}</p>
+        {#await errorMessage then message}
+            <p>{message}</p>
         {/await}
 
         {#if numErrors >= 16}
             <p>
-                Number of times you've seen this page: <span
-                    class="text-foreground font-stretch-200%">{numErrors}</span
-                >
+                Number of times you've seen this page:
+                <span class="text-foreground font-stretch-200%">
+                    {numErrors}
+                </span>
             </p>
         {/if}
 

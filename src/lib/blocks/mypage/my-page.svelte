@@ -9,6 +9,7 @@
         secondary?: Snippet;
         useHeader?: boolean;
     }
+
     let { children, secondary, useHeader = true }: Props = $props();
 </script>
 

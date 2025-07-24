@@ -1,7 +1,9 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import type { StandardProps } from '$lib/utilities/props';
     import { cn } from '$lib/utils';
+    import { AttributeError } from '$lib/utilities/errors';
+    import { SkeletonParagraph } from '$lib/blocks/skeleton';
+    import { fade } from 'svelte/transition';
 
     interface Props extends StandardProps {
         /** Raw article contents as string. */
@@ -10,8 +12,6 @@
          * should be contained. */
         tag?: string;
     }
-
-    let article: string | undefined = $state('');
 
     let {
         raw,
@@ -22,7 +22,9 @@
         ...restProps
     }: Props = $props();
 
-    onMount(async () => {
+    if (raw && children) throw new AttributeError('raw', 'children');
+
+    const convertArticle = async (): Promise<string> => {
         // Doesn't import through normal means
         const showdown = await import('showdown');
         const { Converter } = showdown.default;
@@ -30,9 +32,11 @@
         const converter = new Converter();
 
         if (raw) {
-            article = converter.makeHtml(raw);
+            return converter.makeHtml(raw);
         }
-    });
+
+        throw new Error('Text to convert was not defined.');
+    };
 </script>
 
 <!-- 
@@ -54,10 +58,18 @@ the raw attribute.
     )}
     {...restProps}
     bind:this={ref}
+    transition:fade
 >
-    {#if article}
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-        {@html article}
+    {#if raw}
+        {#await convertArticle()}
+            <SkeletonParagraph {raw} />
+        {:then article: string}
+            <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+            {@html article}
+        {:catch error: string}
+            <h1>Error rendering article</h1>
+            <p>{error}</p>
+        {/await}
     {:else}
         {@render children?.()}
     {/if}

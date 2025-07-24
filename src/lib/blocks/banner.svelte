@@ -7,7 +7,7 @@
 
     let { image }: Props = $props();
 
-    // Need to use background image style since tailwind
+    // Need to use style attribute since tailwind
     // cannot compute dynamic values
 </script>
 
