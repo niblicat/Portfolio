@@ -37,7 +37,6 @@ replaced with the drawer.
 <!-- Directory and Navigation -->
 <div class={cn('flex items-center justify-end gap-2', className)} {...restProps}>
     {@render children?.()}
-    <!-- {#if width < 768} -->
     {#if useDrawer}
         {#if drawer}
             {@render drawer()}

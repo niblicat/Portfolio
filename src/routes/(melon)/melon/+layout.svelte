@@ -26,6 +26,7 @@
 
 <MyPage class="flex min-h-lvh flex-col pt-14 sm:pt-18">
     {#snippet header()}
+        <!-- <div> -->
         <Header.Root class="fixed top-0 right-0 left-0 mt-4 sm:mt-8">
             <Header.Logo class="text-2xl font-thin sm:text-3xl md:text-4xl">
                 {@render logo()}
@@ -35,6 +36,7 @@
                 <Header.Nav useDrawer={wrapped} />
             {/snippet}
         </Header.Root>
+        <!-- </div> -->
     {/snippet}
 
     {@render children()}

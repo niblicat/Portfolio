@@ -17,18 +17,30 @@
     }: Props = $props();
 
     let clientWidth = $state(0);
-    let wrapped = $state(false);
 
+    // true starts the page with drawer, better than showing multiple rows
+    let wrapped = $state(true);
+    // start with !0 so we can cause potential wrapping, detect it, and then
+    // before the DOM updates, we stop the wrapping by showing a smaller navbar
+    let lastClientWidth = -5;
+
+    // The below $effect.pre(...) makes sure to set wrapped to false
+    // before we evaluate, or else we will be calculating the child sizes
+    // using the drawer version of the header
     $effect.pre(() => {
-        void clientWidth;
-        // This makes sure to set wrapped to false before we evaluate,
-        // or else we will be calculating the child sizes using drawer
-        // version of the header
-        wrapped = false;
+        void clientWidth; // allows us to observer without using
+
+        // only reset wrapped if the page width changed!
+        if (clientWidth !== lastClientWidth) {
+            wrapped = false;
+        }
     });
+
     $effect(() => {
-        void clientWidth;
+        void clientWidth; // allows us to observer without using
+
         if (!!ref) wrapped = isFlexRowWrapped(ref);
+        lastClientWidth = clientWidth;
     });
 </script>
 

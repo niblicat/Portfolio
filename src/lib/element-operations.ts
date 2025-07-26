@@ -42,5 +42,5 @@ export function isFlexRowWrapped(element: Element): boolean {
     /** The maximum width the gaps could occupy. */
     const gapWidths = gap * gapCount;
 
-    return childWidths + gapWidths > paddingBoxWidth;
+    return childWidths + gapWidths >= paddingBoxWidth;
 }
