@@ -1,17 +1,23 @@
 <script lang="ts">
-    import Header from '$lib/blocks/header/header.svelte';
     import { MyPage } from '$lib/blocks/mypage';
-    import type { Snippet } from 'svelte';
+    import * as Header from '$lib/blocks/header';
+    import type { ChildrenProps } from '$lib/utilities/props';
 
-    interface Props {
-        children: Snippet;
-    }
-
-    let { children }: Props = $props();
+    let { children }: ChildrenProps = $props();
 </script>
 
 {#snippet header()}
-    <Header />
+    <div class="pointer-events-none fixed top-0 right-0 left-0 p-4">
+        <Header.Root class="pointer-events-auto">
+            <Header.Logo class="text-2xl font-thin sm:text-3xl md:text-4xl">
+                Angelina Flores
+            </Header.Logo>
+            <!-- This allows the header to react to flex row changes -->
+            {#snippet navigation(wrapped: boolean)}
+                <Header.Nav useDrawer={wrapped} />
+            {/snippet}
+        </Header.Root>
+    </div>
 {/snippet}
 
 {#snippet footer()}
@@ -23,17 +29,6 @@
     </footer>
 {/snippet}
 
-<MyPage class="flex min-h-lvh flex-col pt-14 sm:pt-18" {header} {footer}>
+<MyPage class="flex min-h-lvh w-full flex-col pt-24" mainClass="mx-4 md:mx-8" {header} {footer}>
     {@render children()}
 </MyPage>
-
-<!--
-Structure should be the following:
-<body> (already good)
-    <header></header>
-    <main></main>
-    <footer></footer>
-</body>
-
-it's okay to wrap header, main, and footer within a div tag
--->

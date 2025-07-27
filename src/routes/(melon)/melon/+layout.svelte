@@ -47,10 +47,6 @@
 <!-- Import from static since dynamic imports won't work with toImageUrl() -->
 <Banner image="/images/melon-banner.png" />
 
-<MyPage
-    class="flex min-h-lvh w-full flex-col pt-24" mainClass="mx-4 md:mx-8"
-    {header}
-    {footer}
->
+<MyPage class="flex min-h-lvh w-full flex-col pt-24" mainClass="mx-4 md:mx-8" {header} {footer}>
     {@render children()}
 </MyPage>

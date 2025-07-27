@@ -8,4 +8,4 @@
     <meta name="description" content="Learn more about Angelina Flores." />
 </svelte:head>
 
-<Article raw={article} tag="main" />
+<Article class="m-4 mx-auto max-w-4xl" raw={article} tag="main" />
