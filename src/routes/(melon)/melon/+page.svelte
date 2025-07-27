@@ -13,10 +13,10 @@
     />
 </svelte:head>
 
-<Article tag="main" {raw}></Article>
+<Article class="m-4 mx-auto max-w-4xl" tag="article" {raw}></Article>
 
 <div
-    class="mx-4 my-4 flex flex-row justify-center gap-2 *:h-12 sm:mx-8 sm:gap-4 sm:*:h-18 md:mx-auto md:justify-around"
+    class="mx-auto flex max-w-4xl flex-row justify-center gap-2 *:h-12 sm:gap-4 sm:*:h-16 md:justify-around"
 >
     <Button
         variant="badge"

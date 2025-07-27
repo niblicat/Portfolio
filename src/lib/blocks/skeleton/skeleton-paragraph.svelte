@@ -30,7 +30,7 @@
     );
 </script>
 
-<!-- 
+<!--
 @component
 Skeleton Paragraph displays a skeleton of a paragraph.
 

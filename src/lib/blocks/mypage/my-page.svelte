@@ -5,14 +5,14 @@
 
 <script lang="ts">
     interface Props extends BodyContainerProps {
-        innerClass?: string;
+        mainClass?: string;
     }
 
     let {
         header,
         footer,
         class: className,
-        innerClass,
+        mainClass,
         children,
         ref = $bindable(null),
         ...restProps
@@ -31,14 +31,9 @@ The header and footer will be inserted outside of the width spacing wrapper,
 so they are free to fit the full width of the page.
 -->
 
-<div
-    data-slot="my-page"
-    class={cn('z-0 min-h-full w-full', className)}
-    bind:this={ref}
-    {...restProps}
->
+<div data-slot="my-page" class={cn('z-0', className)} bind:this={ref} {...restProps}>
     {@render header?.()}
-    <main class={cn('mx-auto max-w-7xl p-4', innerClass)}>
+    <main class={mainClass}>
         {@render children?.()}
     </main>
     {@render footer?.()}

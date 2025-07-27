@@ -43,7 +43,7 @@
 {/snippet}
 
 <NavigationMenu.Root viewport={false}>
-    <NavigationMenu.List class="flex flex-wrap">
+    <NavigationMenu.List class="flex flex-wrap gap-2">
         {#each navItems as item (item.title)}
             {@render ListItem(item)}
         {/each}

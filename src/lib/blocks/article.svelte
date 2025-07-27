@@ -7,7 +7,7 @@
     interface Props extends StandardProps {
         /** Raw article contents as string. */
         raw?: string;
-        /** The tag of the HTML elementin which the article
+        /** The tag of the HTML element in which the article
          * should be contained. */
         tag?: string;
     }
@@ -24,7 +24,7 @@
     if (raw && children) throw new AttributeError('raw', 'children');
 
     const convertArticle = async (): Promise<string> => {
-        // Doesn't import through normal means
+        // Doesn't import through normal means, so we'll await it
         const showdown = await import('showdown');
         const { Converter } = showdown.default;
 
@@ -52,7 +52,7 @@ the raw attribute.
 <svelte:element
     this={tag}
     class={cn(
-        'prose prose-slate dark:prose-invert bg-background inset-shadow-secondary mx-4 my-4 max-w-4xl rounded-lg border px-6 py-6 inset-shadow-sm sm:mx-8 sm:px-8 md:mx-auto',
+        'prose prose-slate dark:prose-invert bg-background inset-shadow-secondary rounded-lg border p-8 inset-shadow-sm',
         className
     )}
     {...restProps}

@@ -55,7 +55,7 @@ the header.
 
 <header
     class={cn(
-        'bg-secondary shadow-secondary/50 pointer-events-auto z-50 mx-2 flex max-h-16 max-w-5xl flex-wrap justify-between gap-4 rounded-lg px-2 py-2 shadow-md sm:px-8 md:mx-auto',
+        'bg-secondary shadow-secondary/50 mx-auto flex h-16 max-w-5xl flex-wrap justify-between gap-4 rounded-lg px-4 py-2 shadow-md sm:px-8',
         className
     )}
     bind:this={ref}

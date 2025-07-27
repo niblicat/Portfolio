@@ -16,7 +16,7 @@
     {#if !children || width >= 640}
         Angelina Flores
     {/if}
-    <div class="recessed max-h-12 max-w-28 rounded-lg p-1">
+    <div class="recessed max-h-12 max-w-32 rounded-lg p-1">
         <img class="object-contain" src={imageLogo} alt="Melon Merge 3D logo" />
     </div>
 {/snippet}
@@ -24,19 +24,19 @@
 <!-- Import from static since dynamic imports won't work with toImageUrl() -->
 <Banner image="/images/melon-banner.png" />
 
-<MyPage class="flex min-h-lvh flex-col pt-14 sm:pt-18">
+<MyPage class="flex min-h-lvh w-full flex-col pt-24" mainClass="mx-4 md:mx-8">
     {#snippet header()}
-        <!-- <div> -->
-        <Header.Root class="fixed top-0 right-0 left-0 mt-4 sm:mt-8">
-            <Header.Logo class="text-2xl font-thin sm:text-3xl md:text-4xl">
-                {@render logo()}
-            </Header.Logo>
-            <!-- This allows the header to react to flex row changes -->
-            {#snippet navigation(wrapped: boolean)}
-                <Header.Nav useDrawer={wrapped} />
-            {/snippet}
-        </Header.Root>
-        <!-- </div> -->
+        <div class="pointer-events-none fixed top-0 right-0 left-0 p-4">
+            <Header.Root class="pointer-events-auto">
+                <Header.Logo class="text-2xl font-thin sm:text-3xl md:text-4xl">
+                    {@render logo()}
+                </Header.Logo>
+                <!-- This allows the header to react to flex row changes -->
+                {#snippet navigation(wrapped: boolean)}
+                    <Header.Nav useDrawer={wrapped} />
+                {/snippet}
+            </Header.Root>
+        </div>
     {/snippet}
 
     {@render children()}
