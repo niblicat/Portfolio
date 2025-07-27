@@ -1,7 +1,18 @@
 [
     {
-        "title": "About Me",
+        "title": "About",
         "href": "/about"
+    },
+    {
+        "title": "Experience",
+        "href": "/work",
+        "contents": [
+            {
+                "name": "Center for Crime Science and Violence Prevention @ SIUE",
+                "description": "...",
+                "href": "/ccsvp"
+            }
+        ]
     },
     {
         "title": "Projects",

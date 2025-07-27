@@ -21,32 +21,36 @@
     </div>
 {/snippet}
 
+{#snippet header()}
+    <div class="pointer-events-none fixed top-0 right-0 left-0 p-4">
+        <Header.Root class="pointer-events-auto">
+            <Header.Logo class="text-2xl font-thin sm:text-3xl md:text-4xl">
+                {@render logo()}
+            </Header.Logo>
+            <!-- This allows the header to react to flex row changes -->
+            {#snippet navigation(wrapped: boolean)}
+                <Header.Nav useDrawer={wrapped} />
+            {/snippet}
+        </Header.Root>
+    </div>
+{/snippet}
+
+{#snippet footer()}
+    <!-- Don't make footer colors extend beyond page due to overscroll -->
+    <footer class="mt-auto bg-red-500/50">
+        footer
+        <br />
+        footer
+    </footer>
+{/snippet}
+
 <!-- Import from static since dynamic imports won't work with toImageUrl() -->
 <Banner image="/images/melon-banner.png" />
 
-<MyPage class="flex min-h-lvh w-full flex-col pt-24" mainClass="mx-4 md:mx-8">
-    {#snippet header()}
-        <div class="pointer-events-none fixed top-0 right-0 left-0 p-4">
-            <Header.Root class="pointer-events-auto">
-                <Header.Logo class="text-2xl font-thin sm:text-3xl md:text-4xl">
-                    {@render logo()}
-                </Header.Logo>
-                <!-- This allows the header to react to flex row changes -->
-                {#snippet navigation(wrapped: boolean)}
-                    <Header.Nav useDrawer={wrapped} />
-                {/snippet}
-            </Header.Root>
-        </div>
-    {/snippet}
-
+<MyPage
+    class="flex min-h-lvh w-full flex-col pt-24" mainClass="mx-4 md:mx-8"
+    {header}
+    {footer}
+>
     {@render children()}
-
-    {#snippet footer()}
-        <!-- Don't make footer colors extend beyond page due to overscroll -->
-        <footer class="mt-auto bg-red-500/50">
-            footer
-            <br />
-            footer
-        </footer>
-    {/snippet}
 </MyPage>

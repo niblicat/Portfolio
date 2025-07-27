@@ -4,6 +4,40 @@
     import { navItems } from '$lib/data/navitems';
     import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
     import { buttonVariants } from '$lib/components/ui/button';
+
+    let root: HTMLElement | null = $state(null);
+    let rootClass = $state('');
+
+    // https://tailwindcss.com/docs/detecting-classes-in-source-files#dynamic-class-names
+    const contentSize = $state(300);
+    const contentSizeClass = $state(`w-[300px]`);
+
+    function adjustSpacing(itemID: string): void {
+        if (!root) return;
+
+        const rect = root.getBoundingClientRect();
+        const selectedItemElement = document.getElementById(itemID);
+
+        if (!selectedItemElement) return;
+
+        const currentRect = selectedItemElement.getBoundingClientRect();
+
+        const center = (currentRect.left + currentRect.right) / 2;
+        const halfContentSize = contentSize / 2;
+
+        const contentLeft = center - halfContentSize;
+        // relativeToNavLeft of 0 is the start of the nav menu
+        const relativeToNavLeft = contentLeft - rect.left;
+
+        if (relativeToNavLeft < 0) {
+            rootClass = '[&_div.absolute]:right-auto [&_div.absolute]:left-0';
+        } else if (center + halfContentSize > rect.right) {
+            rootClass = '[&_div.absolute]:left-auto [&_div.absolute]:right-0';
+        } else {
+            // set the position relative centered to the nav item
+            rootClass = `[&_div.absolute]:right-auto [&_div.absolute]:left-[${relativeToNavLeft}px]`;
+        }
+    }
 </script>
 
 {#snippet ListLink(content: NavContent)}
@@ -15,7 +49,7 @@
 
 {#snippet ListContent(contents: NavContent[])}
     <NavigationMenu.Content>
-        <ul class="grid w-[300px] gap-4 p-2">
+        <ul class={`grid ${contentSizeClass} gap-4 p-2`}>
             {#each contents as content (content.name)}
                 <li>
                     {@render ListLink(content)}
@@ -42,7 +76,12 @@
     </NavigationMenu.Item>
 {/snippet}
 
-<NavigationMenu.Root viewport={false}>
+<NavigationMenu.Root
+    onValueChange={adjustSpacing}
+    class={rootClass}
+    bind:ref={root}
+    viewport={true}
+>
     <NavigationMenu.List class="flex flex-wrap gap-2">
         {#each navItems as item (item.title)}
             {@render ListItem(item)}

@@ -2,7 +2,7 @@
     import { isFlexRowWrapped } from '$lib/element-operations';
     import type { StandardProps } from '$lib/utilities/props';
     import { cn } from '$lib/utils';
-    import { onMount, tick, type Snippet } from 'svelte';
+    import { type Snippet } from 'svelte';
 
     interface Props extends StandardProps {
         navigation?: Snippet<[boolean]>;
