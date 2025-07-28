@@ -4,6 +4,7 @@
     import imageLogo from '$lib/images/merge-logo-2.png';
     import * as Header from '$lib/blocks/header';
     import type { ChildrenProps } from '$lib/utilities/props';
+    import { slide } from 'svelte/transition';
 
     let { children }: ChildrenProps = $props();
 
@@ -13,16 +14,13 @@
 <svelte:window bind:innerWidth={width} />
 
 {#snippet logo()}
-    {#if !children || width >= 640}
-        Angelina Flores
-    {/if}
     <div class="recessed max-h-12 max-w-32 rounded-lg p-1">
         <img class="object-contain" src={imageLogo} alt="Melon Merge 3D logo" />
     </div>
 {/snippet}
 
 {#snippet header()}
-    <div class="pointer-events-none fixed top-0 right-0 left-0 p-4">
+    <div class="pointer-events-none fixed top-0 right-0 left-0 p-4" in:slide>
         <Header.Root class="pointer-events-auto">
             <Header.Logo class="text-2xl font-thin sm:text-3xl md:text-4xl">
                 {@render logo()}

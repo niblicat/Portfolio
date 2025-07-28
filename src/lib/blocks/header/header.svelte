@@ -28,7 +28,7 @@
     // before we evaluate, or else we will be calculating the child sizes
     // using the drawer version of the header
     $effect.pre(() => {
-        void clientWidth; // allows us to observer without using
+        void clientWidth; // allows us to observe without using
 
         // only reset wrapped if the page width changed!
         if (clientWidth !== lastClientWidth) {
@@ -37,7 +37,7 @@
     });
 
     $effect(() => {
-        void clientWidth; // allows us to observer without using
+        void clientWidth; // allows us to observe without using
 
         if (!!ref) wrapped = isFlexRowWrapped(ref);
         lastClientWidth = clientWidth;

@@ -9,7 +9,7 @@
 
     // https://tailwindcss.com/docs/detecting-classes-in-source-files#dynamic-class-names
     const contentSize = $state(300);
-    const contentSizeClass = $state(`w-[300px] min-w-[300px]`);
+    const contentSizeClass = $state('w-[300px]');
 
     function adjustSpacing(itemID: string): void {
         if (!root) return;
@@ -50,8 +50,7 @@
 
 {#snippet ListContent(contents: NavContent[])}
     <NavigationMenu.Content>
-        <!-- <ul class={`grid ${contentSizeClass} gap-4 p-2`}> -->
-        <ul class='grid w-[300px] gap-4 p-2'>
+        <ul class="grid {contentSizeClass} gap-4 p-2">
             {#each contents as content (content.name)}
                 <li>
                     {@render ListLink(content)}
