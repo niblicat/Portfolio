@@ -2,7 +2,6 @@
     import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
     import { NavItemKind, type NavContent, type NavItem } from '../structures/nav';
     import { navItems } from '$lib/data/navitems';
-    import { navigationMenuTriggerStyle } from '$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte';
     import { buttonVariants } from '$lib/components/ui/button';
 
     let root: HTMLElement | null = $state(null);
@@ -69,7 +68,7 @@
         {:else if item.kind === NavItemKind.Link}
             <NavigationMenu.Link>
                 {#snippet child()}
-                    <a href={item.href} class={navigationMenuTriggerStyle()}>{item.title}</a>
+                    <a href={item.href} class={buttonVariants({ variant: 'outline' })}>{item.title}</a>
                 {/snippet}
             </NavigationMenu.Link>
         {/if}

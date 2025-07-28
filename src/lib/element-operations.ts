@@ -1,22 +1,29 @@
-export function getComputedValue(container: Element, cssProp: string): number {
+export function getComputedValue(container: Element, cssProp: string, useInt: boolean = true): number {
     // https://stackoverflow.com/a/49507416
-    return parseInt(
-        window.getComputedStyle(container, null).getPropertyValue(cssProp).split('px')[0]
-    );
+    if (useInt) {
+        return parseInt(
+            window.getComputedStyle(container, null).getPropertyValue(cssProp).split('px')[0]
+        );
+    }
+    else {
+        return parseFloat(
+            window.getComputedStyle(container, null).getPropertyValue(cssProp).split('px')[0]
+        );
+    }
 }
 
 export function getPaddingBoxWidth(element: Element): number {
-    const width = getComputedValue(element, 'width');
-    const paddingLeft = getComputedValue(element, 'padding-left');
-    const paddingRight = getComputedValue(element, 'padding-right');
+    const width = getComputedValue(element, 'width', false);
+    const paddingLeft = getComputedValue(element, 'padding-left', false);
+    const paddingRight = getComputedValue(element, 'padding-right', false);
 
     return width - paddingLeft - paddingRight;
 }
 
 export function getOccupiedWidth(element: Element) {
-    const width = getComputedValue(element, 'width');
-    const marginLeft = getComputedValue(element, 'margin-left');
-    const marginRight = getComputedValue(element, 'margin-right');
+    const width = getComputedValue(element, 'width', false);
+    const marginLeft = getComputedValue(element, 'margin-left', false);
+    const marginRight = getComputedValue(element, 'margin-right', false);
 
     return width + marginLeft + marginRight;
 }
@@ -32,7 +39,7 @@ export function isFlexRowWrapped(element: Element): boolean {
     /** The content size of the flex box. */
     const paddingBoxWidth = getPaddingBoxWidth(element);
 
-    const gap = getComputedValue(element, 'gap');
+    const gap = getComputedValue(element, 'gap', false);
     /**
      * The maximum number of gaps the element contains.
      * When there are multiple rows, the actual number of gaps might be less
@@ -42,5 +49,5 @@ export function isFlexRowWrapped(element: Element): boolean {
     /** The maximum width the gaps could occupy. */
     const gapWidths = gap * gapCount;
 
-    return childWidths + gapWidths >= paddingBoxWidth;
+    return childWidths + gapWidths > paddingBoxWidth;
 }
