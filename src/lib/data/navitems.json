@@ -1,11 +1,11 @@
 [
     {
         "title": "About",
-        "href": "/about"
+        "href": "#about"
     },
     {
         "title": "Experience",
-        "href": "/work",
+        "href": "#work",
         "contents": [
             {
                 "name": "Center for Crime Science and Violence Prevention @ SIUE",
@@ -16,7 +16,7 @@
     },
     {
         "title": "Projects",
-        "href": "/projects",
+        "href": "#projects",
         "contents": [
             {
                 "name": "Melon Merge 3D",

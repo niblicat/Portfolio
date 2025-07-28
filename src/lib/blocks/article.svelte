@@ -19,7 +19,7 @@
         children,
         ref = $bindable(null),
         ...restProps
-    }: Props = $props();
+    }: Props & { [key: string]: any } = $props();
 
     if (raw && children) throw new AttributeError('raw', 'children');
 
@@ -55,8 +55,8 @@ the raw attribute.
         'prose prose-slate dark:prose-invert bg-foreground/5 inset-shadow-secondary overflow-hidden rounded-lg border p-8 inset-shadow-sm',
         className
     )}
-    {...restProps}
     bind:this={ref}
+    {...restProps}
 >
     {#if raw}
         {#await convertArticle()}
