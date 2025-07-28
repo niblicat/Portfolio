@@ -68,7 +68,9 @@
         {:else if item.kind === NavItemKind.Link}
             <NavigationMenu.Link>
                 {#snippet child()}
-                    <a href={item.href} class={buttonVariants({ variant: 'outline' })}>{item.title}</a>
+                    <a href={item.href} class={buttonVariants({ variant: 'outline' })}
+                        >{item.title}</a
+                    >
                 {/snippet}
             </NavigationMenu.Link>
         {/if}

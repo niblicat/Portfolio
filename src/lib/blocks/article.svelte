@@ -52,7 +52,7 @@ the raw attribute.
 <svelte:element
     this={tag}
     class={cn(
-        'prose prose-slate dark:prose-invert bg-background inset-shadow-secondary rounded-lg border p-8 inset-shadow-sm',
+        'prose prose-slate dark:prose-invert bg-foreground/5 inset-shadow-secondary overflow-hidden rounded-lg border p-8 inset-shadow-sm',
         className
     )}
     {...restProps}

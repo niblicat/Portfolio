@@ -1,11 +1,14 @@
-export function getComputedValue(container: Element, cssProp: string, useInt: boolean = true): number {
+export function getComputedValue(
+    container: Element,
+    cssProp: string,
+    useInt: boolean = true
+): number {
     // https://stackoverflow.com/a/49507416
     if (useInt) {
         return parseInt(
             window.getComputedStyle(container, null).getPropertyValue(cssProp).split('px')[0]
         );
-    }
-    else {
+    } else {
         return parseFloat(
             window.getComputedStyle(container, null).getPropertyValue(cssProp).split('px')[0]
         );

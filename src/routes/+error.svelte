@@ -52,7 +52,7 @@
 </svelte:head>
 
 <MyPage class="flex min-h-lvh w-full flex-col" mainClass="mx-4 md:mx-8">
-    <Article class="text-center m-4 mx-auto max-w-4xl" tag="main">
+    <Article class="m-4 mx-auto max-w-4xl text-center" tag="main">
         <h1>{page.status}: {page.error?.message}</h1>
         {#await errorMessage then message}
             <p>{message}</p>
