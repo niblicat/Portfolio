@@ -21,20 +21,10 @@
     </div>
 {/snippet}
 
-{#snippet footer()}
-    <!-- Don't make footer colors extend beyond page due to overscroll -->
-    <footer class="mt-auto bg-red-500/50">
-        footer
-        <br />
-        footer
-    </footer>
-{/snippet}
-
 <MyPage
     class="flex min-h-lvh w-full flex-col pt-24 [&_*]:scroll-my-24"
     mainClass="mx-4 md:mx-8"
     {header}
-    {footer}
 >
     {@render children()}
 </MyPage>
