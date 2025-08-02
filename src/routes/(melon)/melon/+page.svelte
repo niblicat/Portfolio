@@ -73,16 +73,16 @@
 
     <p>
         After finishing my junior year. I alone continued the development of Melon Merge 3D, aiming
-        to improve the aesthetics and feedback of the game. Vibrations, particle effects, and
-        physics were a must-have. Additionally, the fruits could not be spheres with a stock fruit
-        texture slapped on.
+        to improve the aesthetics and feedback of the game. Haptic feedback, particle effects, and
+        improved physics were a must-have. Additionally, the fruits no longer be spheres with a
+        stock fruit texture slapped on.
     </p>
     <p>
-        I learned Maya and brushed up on my Photoshop skills to model and paint each fruit, the
-        background elements. I used Illustrator to design the vector graphs like icons and UI
-        elements. Fruits like the pineapple and cantaloupe took a few revisions to design just
-        right, as I really wanted the fruits to look as fruity as possible. Overall, I'm quite proud
-        of what I accomplished. Only a few visual assets, like the music and skybox, were not
+        I learned Maya and brushed up on my Photoshop skills to model and paint the fruits and the
+        background elements. I used Illustrator to design vector graphics like icons and UI
+        elements. Fruits like the pineapple and cantaloupe took a few revisions until they looked
+        just right, as I really wanted the fruits to look as fruity as possible. Overall, I'm quite
+        proud of what I accomplished. Only a few visual assets, like the music and skybox, were not
         directly designed by me.
     </p>
 
@@ -96,17 +96,17 @@
 
     <p>
         The next big hurdle was releasing the game on app stores. Releasing the game on the App
-        Store was as challenging as registering and paying for an Apple Developer account and
-        publishing for approval on App Store Connect. However, the Google Play Store would prove to
-        be a tougher challenge.
+        Store was as challenging as registering and paying for an Apple Developer account and then
+        publishing for approval on App Store Connect. However, releasing the game on the Google Play
+        Store would prove to be a tougher challenge.
     </p>
 
     <p>
         Google instituted a 20-tester requirement to distribute on the play store. This meant I
-        would need to find 20 people with an Android phone willing to download my game, play the
-        game and not uninstall the game within two weeks. To find my testers, I asked professors if
-        I could preview my game in for brief periods during classes. Sure enough, after about two
-        classes, I had enough Android users to apply for distribution on the Google Play Store!
+        needed to find 20 people with an Android phone willing to download my game, play the game
+        and not uninstall the game within two weeks. To find my testers, I asked professors if I
+        could briefly preview my game during class time. Sure enough, after advertising the game in
+        two classes, I had enough Android users to apply for distribution on the Google Play Store!
     </p>
 
     <h2>What Now?</h2>
