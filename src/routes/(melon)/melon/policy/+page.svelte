@@ -3,4 +3,4 @@
     import article from '$lib/data/articles/policy.md?raw';
 </script>
 
-<Article raw={article} />
+<Article class="m-4 mx-auto max-w-4xl" raw={article} />

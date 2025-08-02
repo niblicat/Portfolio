@@ -27,8 +27,11 @@
         src={memo}
         alt="A sleeping kitty holding a slime of lime."
     />
+
     <h2 class="mt-0">About</h2>
+
     <p>I'm a Unity software/game developer and web developer.</p>
+
     <p>
         Right now, I'm working with the Center for Crime Science and Violence Prevention at SIUE on
         an immersive VR law training simulation.
