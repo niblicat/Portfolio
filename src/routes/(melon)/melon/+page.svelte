@@ -22,8 +22,8 @@
     <p>
         Melon Merge 3D is a physics puzzle game where you combine fruits into increasingly larger
         fruits. It was created mobile-first with the goal of designing the best fruit merging game
-        on both major app stores. The game has been downloaded 300 times across the App Store and
-        Google Play Store.
+        on both major app stores. The game has been downloaded over 300 times across the App Store
+        and Google Play Store.
     </p>
 
     <div
