@@ -22,10 +22,7 @@
     </div>
 {/snippet}
 
-<MyPage
-    class="flex min-h-lvh w-full flex-col pt-24 [&_*]:scroll-my-24"
-    {header}
->
+<MyPage class="flex min-h-lvh w-full flex-col pt-24 [&_*]:scroll-my-24" {header}>
     {@render children()}
     {#snippet footer()}
         <Footer />

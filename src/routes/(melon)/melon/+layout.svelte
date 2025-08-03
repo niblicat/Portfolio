@@ -6,6 +6,7 @@
     import * as Header from '$lib/blocks/header';
     import type { ChildrenProps } from '$lib/utilities/props';
     import { slide } from 'svelte/transition';
+    import Footer from '$lib/blocks/footer.svelte';
 
     let { children }: ChildrenProps = $props();
 
@@ -38,4 +39,7 @@
 
 <MyPage class="flex min-h-lvh w-full scroll-my-24 flex-col pt-24" mainClass="mx-4 md:mx-8" {header}>
     {@render children()}
+    {#snippet footer()}
+        <Footer />
+    {/snippet}
 </MyPage>
