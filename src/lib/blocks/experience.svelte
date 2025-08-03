@@ -17,7 +17,7 @@
         <div class="text-foreground/50 mb-2">
             {convertToRange(item.start, item.end)} • {item.location}
         </div>
-        <span>{item.description}</span>
+        <!-- <span>{item.description}</span> -->
         {#if item.bullets}
             <ul class="ml-6 list-disc">
                 {#each item.bullets as bullet}
@@ -49,7 +49,7 @@
     </li>
 {/snippet}
 
-<ul id="experience" class="mx-auto my-8 max-w-4xl">
+<ul id="experience" class="mx-auto my-8 max-w-2xl">
     {#each experienceItems as experienceItem (experienceItem.id)}
         {@render experienceListItem(experienceItem)}
     {/each}

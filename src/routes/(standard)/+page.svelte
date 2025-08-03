@@ -12,14 +12,14 @@
     />
 </svelte:head>
 
-<Article id="about" class="m-4 mx-auto max-w-2xl scroll-my-24" tag="section">
+<section id="about" class="prose prose-slate dark:prose-invert basis-full rounded-none sm:px-32 p-8 bg-foreground/5 inset-shadow-secondary/50 overflow-hidden w-full min-w-full scroll-my-24">
     <img
         class="float-right !m-4 inline max-w-24 rounded-lg shadow-xs"
         src={memo}
         alt="A sleeping kitty holding a slime of lime."
     />
 
-    <h2 class="mt-0">About</h2>
+    <h1 class="mt-0">About</h1>
 
     <p>I'm a software engineer and web developer.</p>
 
@@ -36,23 +36,25 @@
         <li><a href="https://github.com/niblicat">Github</a></li>
         <li><a href="https://www.linkedin.com/in/dev-flores/">LinkedIn</a></li>
     </ul>
-</Article>
+</section>
 
-<Experience />
+<div class="mx-4 md:mx-8">
+    <Experience />
 
-<Article class="m-4 mx-auto max-w-2xl" tag="section">
-    <h2>Current Role</h2>
+    <Article class="m-4 mx-auto max-w-2xl" tag="section">
+        <h2>Current Role</h2>
 
-    <p>
-        I am currently working at the Center for Crime Science and Violence Prevention at SIUE's
-        Belleville campus as a Unity Software Engineer. Here, I primarily work on developing a
-        virtual reality law enforcement training simulation with the goal of training officer
-        patience and professionalism. I work with Unity, C#, .NET, and Google Cloud Platform.
-    </p>
+        <p>
+            I am currently working at the Center for Crime Science and Violence Prevention at SIUE's
+            Belleville campus as a Unity Software Engineer. Here, I primarily work on developing a
+            virtual reality law enforcement training simulation with the goal of training officer
+            patience and professionalism. I work with Unity, C#, .NET, and Google Cloud Platform.
+        </p>
 
-    <p>
-        My main focus has been developing a robust dialog system that utilizes generative AI for NPC
-        responses. This involves designing state machines, prompt engineering, and consuming REST
-        APIs for generative AI, text-to-speech, and speech-to-text services.
-    </p>
-</Article>
+        <p>
+            My main focus has been developing a robust dialog system that utilizes generative AI for NPC
+            responses. This involves designing state machines, prompt engineering, and consuming REST
+            APIs for generative AI, text-to-speech, and speech-to-text services.
+        </p>
+    </Article>
+</div>
