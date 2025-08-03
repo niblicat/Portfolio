@@ -3,6 +3,7 @@
     import * as Header from '$lib/blocks/header';
     import type { ChildrenProps } from '$lib/utilities/props';
     import { slide } from 'svelte/transition';
+    import Footer from '$lib/blocks/footer.svelte';
 
     let { children }: ChildrenProps = $props();
 </script>
@@ -27,4 +28,7 @@
     {header}
 >
     {@render children()}
+    {#snippet footer()}
+        <Footer />
+    {/snippet}
 </MyPage>

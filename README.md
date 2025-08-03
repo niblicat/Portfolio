@@ -8,12 +8,14 @@ This portfolio is based on [SvelteKit](https://svelte.dev) and designed using [T
   - Discuss more work experience
   - Include more projects
 - Cool features
-  - Marquee showcasing various projects
+  - Carousel showcasing various projects
   - Better skills
     - Use badges
     - Include relevant icons
   - CMS & blog posts
   - Optimize images
+  - Tests
+    - Verify that images referenced in JSON data exist
 
 ## Features
 

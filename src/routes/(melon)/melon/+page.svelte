@@ -37,7 +37,7 @@
         >
             <img
                 src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1730678400"
-                alt="Download on the App Store"
+                alt="Download on the App Store."
                 class="h-full object-cover"
             />
         </Button>
@@ -47,7 +47,7 @@
             href="https://play.google.com/store/apps/details?id=net.nibli.merge3d"
             class="p-0"
         >
-            <img src={imageGooglePlay} alt="Get it on Google Play" class="h-full object-cover" />
+            <img src={imageGooglePlay} alt="Get it on Google Play." class="h-full object-cover" />
         </Button>
     </div>
 
@@ -55,7 +55,7 @@
 
     <img
         src={imageGameEarly}
-        alt="Game screenshot of a prototype version of Melon Merge 3D"
+        alt="Game screenshot of a prototype version of Melon Merge 3D."
         class="mx-auto! max-w-32 rounded-lg shadow-xs sm:float-right sm:m-4! sm:inline"
     />
 
@@ -90,7 +90,7 @@
 
     <img
         src={imageGameRecent}
-        alt="Game screenshot of a recent version of Melon Merge 3D in which a pitcher is filled with fruits"
+        alt="Game screenshot of a recent version of Melon Merge 3D in which a pitcher is filled with fruits."
         class="mx-auto! max-w-32 rounded-lg shadow-xs sm:float-right sm:m-4! sm:inline"
     />
 

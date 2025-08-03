@@ -1,5 +1,6 @@
 <script lang="ts">
     import Article from '$lib/blocks/article.svelte';
+    import Experience from '$lib/blocks/experience.svelte';
     import memo from '$lib/images/memo-lime.jpg';
 </script>
 
@@ -11,16 +12,6 @@
     />
 </svelte:head>
 
-<Article class="m-4 mx-auto max-w-2xl" tag="section">
-    <h1>Welcome to my portfolio website</h1>
-
-    <p>
-        This website is currently being developed as of 21 July 2025. While you're here, feel free
-        to check out some of my other projects!
-        <a class="text-nowrap" href="/melon">Check out my mobile game, Melon Merge 3D</a>.
-    </p>
-</Article>
-
 <Article id="about" class="m-4 mx-auto max-w-2xl scroll-my-24" tag="section">
     <img
         class="float-right !m-4 inline max-w-24 rounded-lg shadow-xs"
@@ -30,7 +21,7 @@
 
     <h2 class="mt-0">About</h2>
 
-    <p>I'm a Unity software/game developer and web developer.</p>
+    <p>I'm a software engineer and web developer.</p>
 
     <p>
         Right now, I'm working with the Center for Crime Science and Violence Prevention at SIUE on
@@ -46,6 +37,8 @@
         <li><a href="https://www.linkedin.com/in/dev-flores/">LinkedIn</a></li>
     </ul>
 </Article>
+
+<Experience />
 
 <Article class="m-4 mx-auto max-w-2xl" tag="section">
     <h2>Current Role</h2>

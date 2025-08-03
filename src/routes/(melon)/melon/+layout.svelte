@@ -2,6 +2,7 @@
     import { MyPage } from '$lib/blocks/mypage';
     import Banner from '$lib/blocks/banner.svelte';
     import imageLogo from '$lib/images/merge-logo-2.png';
+    import imageBanner from '$lib/images/melon-banner.png';
     import * as Header from '$lib/blocks/header';
     import type { ChildrenProps } from '$lib/utilities/props';
     import { slide } from 'svelte/transition';
@@ -33,8 +34,7 @@
     </div>
 {/snippet}
 
-<!-- Import from static since dynamic imports won't work with toImageUrl() -->
-<Banner image="/images/melon-banner.png" />
+<Banner image={imageBanner} />
 
 <MyPage class="flex min-h-lvh w-full scroll-my-24 flex-col pt-24" mainClass="mx-4 md:mx-8" {header}>
     {@render children()}

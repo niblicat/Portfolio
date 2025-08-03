@@ -1,8 +1,8 @@
 <script lang="ts">
     import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
     import * as Drawer from '$lib/components/ui/drawer/index.js';
+    import { navItems } from '$lib/data/page-json';
     import { NavItemKind } from '../structures/nav';
-    import { navItems } from '$lib/data/navitems';
     import { Menu } from '@lucide/svelte';
 
     let open = $state(false);
@@ -28,9 +28,12 @@
                         {/each}
                     {:else if item.kind === NavItemKind.Link}
                         <!-- Display header with singular button -->
-                        <Button size="sm" class="min-w-full" href={item.href}>
-                            {item.title}
-                        </Button>
+                        <!-- TODO: Fix subsequent redirects once ID is set -->
+                        <Drawer.Close class="min-w-full">
+                            <Button size="sm" class="min-w-full" href={item.href}>
+                                {item.title}
+                            </Button>
+                        </Drawer.Close>
                     {/if}
                 </div>
             {/each}
