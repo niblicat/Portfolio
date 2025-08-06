@@ -25,7 +25,8 @@
     </p>
 
     <div
-        class="mx-auto my-4 flex max-w-4xl flex-row justify-center gap-2 *:h-12 sm:gap-4 sm:*:h-16 md:justify-around"
+        id="download"
+        class="mx-auto my-4 flex max-w-4xl flex-row flex-wrap justify-center gap-2 *:h-12 sm:gap-4 sm:*:h-16 md:justify-around"
     >
         <Button
             variant="badge"

@@ -9,10 +9,9 @@
         "src": "/src/lib/images/logo-siue.webp",
         "alt": "SIUE logo.",
         "highlights": [
-          "Implemented AI-driven dialog state machine through Google Cloud REST APIs and used Unity, C#, .NET, and VR hardware in police training software",
-          "Collaborated with civil justice experts and law enforcement to integrate research and practical requirements into projects"
+            "Implemented AI-driven dialog state machine through Google Cloud REST APIs and used Unity, C#, .NET, and VR hardware in police training software",
+            "Collaborated with civil justice experts and law enforcement to integrate research and practical requirements into projects"
         ]
-
     },
     {
         "id": "teaching-assistant",
