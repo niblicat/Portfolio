@@ -22,9 +22,9 @@
             {convertToRange(item.start, item.end)} • {item.location}
         </div>
         <!-- <span>{item.description}</span> -->
-        {#if item.bullets}
+        {#if item.highlights}
             <ul class="ml-6 list-disc">
-                {#each item.bullets as bullet}
+                {#each item.highlights as bullet}
                     <li>{bullet}</li>
                 {/each}
             </ul>

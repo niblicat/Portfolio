@@ -7,7 +7,7 @@ export interface ExperienceItem {
     end?: Date;
     location?: string;
     description?: string;
-    bullets?: string[];
+    highlights?: string[];
     /** The image source. */
     src: string;
     /** The image alt text. */
