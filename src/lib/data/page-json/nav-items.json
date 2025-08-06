@@ -8,6 +8,11 @@
         "href": "#projects",
         "contents": [
             {
+                "name": "Hearing Degradation Manager",
+                "description": "An OSHA-compliant web app designed using SvelteKit, Auth.js, Tailwind, and Flowbite",
+                "href": "https://github.com/niblicat/Hearing-Degradation-Manager"
+            },
+            {
                 "name": "Melon Merge 3D",
                 "description": "A 3D spin on a popular physics puzzle game. Available on both the iOS and Android app stores.",
                 "href": "/melon"
